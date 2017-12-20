@@ -1,2 +1,2 @@
-# iword-wxapp
-钦家微信小程序
+# qinjiaApp
+微信小程序
