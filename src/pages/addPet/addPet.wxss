@@ -1,0 +1,7 @@
+@import "../addBaby/addBaby";
+@import "../../common/lib/petType";
+.petType{
+  text-align: right;
+  line-height: 50px;
+  padding-right: 30px;
+}

@@ -1,0 +1,62 @@
+/* pages/user/aid_info.wxss */
+@import '/pages/card/card.wxss';
+
+.aid_container .detail-box {
+    margin-top: 0;
+}
+
+.aid_container .box-cells::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1px;
+    left: 30rpx;
+    border-top: 1rpx solid #dbdbdb;
+    color: #dbdbdb;
+}
+
+.aid_container .box-cells:first-child::before {
+    display: none;
+}
+
+.aid_container .box-cells {
+    padding: 20rpx 36rpx;
+}
+
+.aid_container .box-cells .cells-hd .icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 40rpx;
+}
+
+.aid_container .detail-box .title {
+    color: #333;
+}
+
+.aid_container .detail-box .desc {
+    margin-top: 10rpx;
+    color: #777;
+    word-break: break-all;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.aid_container .detail-box .cells-bd {
+    flex: 1;
+}
+
+.aid_container .grids {
+    width: 80%;
+    padding-top: 4rpx;
+}
+
+.aid_container .grid {
+    text-align: left;
+}
+
+.aid_container .grid .cell_title {
+    font-size: 30rpx;
+    color: #333;
+}

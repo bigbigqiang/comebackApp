@@ -1,0 +1,35 @@
+<!--pages/home/home.wxml 首页-->
+<view>
+  <image class='logo' src='/image/logo2.png'></image>
+  <view class='form'>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/account.png'></image>
+      </view>
+      <input type='text' placeholder='请输入您的手机号' bindinput='getAccount' />
+    </view>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/testCode.png'></image>
+      </view>
+      <input type='text' placeholder='请输入验证密' bindblur='testCodeChange' />
+      <view class='visible'>
+        <text wx:if="{{!taged}}" class='code-text' bindtap='testCode'>{{codeText}}</text>
+        <text wx:if="{{taged}}" class='count-down'>{{countDown}}</text>
+      </view>
+    </view>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/password.png'></image>
+      </view>
+      <input type='text' password='{{!visible}}' placeholder='请输入密码' bindinput='getPassword' />
+      <view class='visible'>
+        <image src='{{visible?"/image/visible.png":"/image/invisible.png"}}' bindtap='swichVisible'></image>
+      </view>
+    </view>
+  </view>
+  <view class='confirm' bindtap='register'>注册</view>
+  <view class='terms'>
+    <text style='color:#a0a0a0'>注册即同意</text><text>《服务协议与软件使用》</text>
+  </view>
+</view>

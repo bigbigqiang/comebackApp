@@ -1,0 +1,150 @@
+page{
+  background-color: #f3f5f5;
+  padding-top: 5px;
+}
+.card{
+  height: 180px;
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+}
+.bg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.idInfo{
+  width: 65%;
+  height: 100%;
+  float: left;
+}
+.top{
+  height: 80px;
+}
+.avatar{
+  width: 30%;
+  height: 80px;
+  float: left;
+}
+.avatar image{
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+.mainInfo{
+  width: 70%;
+  height: 55px;
+  padding-top: 25px;
+  float: left;
+}
+.mainInfo text{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+}
+.mainInfo image{
+  display: block;
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.petType{
+  height: 20px;
+  border:1px solid #F8494C;
+  padding: 2px 5px 3px 5px;
+  color: #F8494C;
+  font-size: 22rpx;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+.petAge{
+  color: #999;
+  padding-left: 15px;
+  font-size: 28rpx;
+  margin-top: 15px;
+}
+
+
+.photo{
+  width: 35%;
+  height: 100%;
+  padding-top: 10px;
+  float: left;
+}
+.photo image{
+  display: block;
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+}
+.photo text{
+  display: block;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.firstAid{
+  height: 200px;
+  padding: 10px 0;
+  background-color: #fff;
+
+}
+.firstAidInfo{
+  height: 60px;
+  margin-bottom: 10px;
+
+}
+.type{
+  width: 15%;
+  height: 60px;
+  float: left;
+}
+.type image{
+  display: block;
+  height: 28px;
+  width: 28px;
+  margin: 5px auto;
+}
+.typeInfo{
+  width: 85%;
+  float: left;
+
+}
+.typeInfo text{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+}
+.typeInfo text:last-child{
+  color: #000;
+}
+.grids{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.grid-cell{
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+  background-color: #fff;
+}
+.arctive{
+  background-color: #f00;
+  color: #fff;
+}

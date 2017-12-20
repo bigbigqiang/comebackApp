@@ -1,0 +1,15 @@
+<!--pages/home/home.wxml 首页-->
+<view>
+    <view class="page">
+        <view class='head'>宠物定位帖</view> 
+        <view class='uploadImage' bindtap='uploadImage'>
+          <image mode='scaleToFill' src="{{imageSrc}}"></image>
+        </view>
+        <view class='remarker'>
+          <input type='text' placeholder='添加备注，管理更方便' />
+        </view>
+        <view class="page_foot">
+            <view class='nextTip' bindtap='toChoosePet'>下一步</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,154 @@
+/* pages/addBaby/addBaby.wxss */
+page{
+  background-color: #f3f5f5;
+  padding-top: 5px;
+}
+.page{
+  background-color: #fff;
+}
+.avatar{
+  height: 50px;
+  background-color: #fff;
+  position: relative;
+  margin-left: 10px;
+}
+.avatar-photo{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  background-color: #f1f1f1;
+}
+.left-info{
+  height: 50px;
+  width: 25%;
+  float: left;
+  line-height: 50px;
+}
+.arrow{
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -8px;
+}
+.delete{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -8px;
+}
+.info-list{
+  height: 50px;
+  border-top: 1px solid #f3f5f5;
+  margin-left:10px;
+  background-color: #fff;
+  position: relative;
+}
+.info-name{
+  height: 100%;
+  width: 75%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.name-placeholder{
+  color: #ccc;
+  font-size: 26rpx;
+  text-align: right;
+}
+.picker{
+  height: 100%;
+  width: 75%;
+  float: left;
+}
+
+.contact{
+  height: 65px;
+  background-color: #fff;
+  position: relative;
+  margin-left: 10px;
+}
+.prompt{
+  position: absolute;
+  top:37px;
+  left: 8px;
+  color: #ccc;
+  font-size: 26rpx;
+}
+.warnInfo{
+  height: 40px;
+  background-color: #f3f5f5;
+  padding: 10px 0 5px;
+}
+.warn-img{
+  height:100%;
+  width:12%;
+  float:left;
+  position:relative;
+}
+.warn-img image{
+  display: block;
+  height: 20px;
+  width: 20px;
+  margin-left:20px;
+  margin-top:3px;
+}
+.warnInfo text{
+  width:87%;
+  float:left;
+  font-size:26rpx;
+  color:#ccc;
+
+}
+.arrow{
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -8px;
+}
+.info-list{
+  height: 50px;
+  border-top: 1px solid #f3f5f5;
+  margin-left:10px;
+  background-color: #fff;
+  position: relative;
+}
+.input-info{
+  height: 100%;
+  width: 75%;
+  float: left;
+}
+
+.right-expl{
+  height: 50px;
+  width: 75%;
+  float: left;
+  color: #b0b0b0;
+  line-height: 50px;
+  font-size: 26rpx;
+}
+.pickerText{
+  height: 50px;
+  line-height: 50px;
+  padding-right: 30px;
+}
+.splitLine{
+  background-color:#f8f8f8;
+  height:17px;
+  border-top:1px solid #ededed;
+  border-bottom:1px solid #ededed
+}
+.unit{
+  color: #b0b0b0;
+  font-size: 26rpx;
+}
+
+

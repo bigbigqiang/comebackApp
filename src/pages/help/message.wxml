@@ -1,0 +1,20 @@
+<!--pages/help/message.wxml 短信通知家人-->
+<view class="container">
+    <view class="page">
+        <view class="page_hd">
+            感谢你使用【钦家】，为方便家人尽快联系到你，请留下电话 {{phone}}
+        </view>
+        <view class="weui-cells weui-cells_form">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="name" placeholder="请填写你的联系方式" bindinput="bindTextAreaBlur" maxlength="11"/>
+                </view>
+            </view>
+        </view>
+        <view class="btn-area btn-nomal">
+            <button type="primary" bindtap="next_page">确认</button>
+            <view class="weui-cells__title">如有疑问，请咨询钦家客服
+                <text bindtap="call" id="4008-950-110" class="link-text">4008-950-110</text> </view>
+        </view>
+    </view>
+</view>

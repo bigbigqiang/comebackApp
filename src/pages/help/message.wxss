@@ -1,0 +1,37 @@
+/* pages/help/message.wxss */
+@import "/common/lib/weui.wxss";
+
+.page_hd {
+    background-color: #fff;
+    padding: 35rpx 30rpx;
+    text-indent: 4rpx;
+}
+
+.page_hd .location {
+    color: #888;
+}
+
+.weui-cells::after, .weui-cells::before {
+    display: none;
+}
+
+.weui-cells_form {
+    margin-top: 0;
+}
+
+.weui-cell {
+    padding: 10rpx 30rpx;
+}
+
+.weui-cells__title {
+    padding-left: 0;
+}
+
+.weui-cell:first-child::before {
+    display: block;
+    left: 30rpx;
+}
+
+.link-text {
+    color: #627698;
+}

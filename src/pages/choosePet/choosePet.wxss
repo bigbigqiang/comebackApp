@@ -1,0 +1,25 @@
+@import "../chooseBaby/chooseBaby";
+.up text{
+  display: block;
+  height: 18px;
+  float: left;
+
+}
+.up image{
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 4px;
+  float: left;
+}
+.petType{
+  display: block;
+  height: 16px;
+  border: 1px solid #f00;
+  border-radius: 3px;
+  float: left;
+  font-size: 22rpx;
+  padding: 2px 5px 3px 5px;
+  margin-right: 5px;
+  color: #f00;
+}

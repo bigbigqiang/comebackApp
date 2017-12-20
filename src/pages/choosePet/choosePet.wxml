@@ -1,0 +1,21 @@
+<view>
+    <view class="page">
+        <view class='babys' wx:for="{{babys}}" wx:for-index="ide" wx:for-item="itemName" bindtap='showTooltip'>
+          <view class='left'>
+            <image class='photo' src='{{itemName.photo}}'></image>
+            <view class='info'>
+              <view class='up'>
+                <text>{{itemName.name}}</text>
+                <image src="{{itemName.sex == 1 ? '/image/boy.png':'/image/girl.png'}}"></image>
+              </view>
+              <view class='down'>
+                <text class='petType'>{{itemName.petType}}</text>
+                <text>{{itemName.age}}岁</text>
+              </view>
+            </view>
+          </view>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='addContent' bindtap='toAddPet'> <text>+</text> 添加宝贝 </view>
+    </view>
+</view>

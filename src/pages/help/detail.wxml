@@ -1,0 +1,257 @@
+<!--pages/help/detail.wxml 求助详情页面-->
+<import src="/common/loading.wxml" />
+<view class="container">
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page" wx:if="{{info}}">
+        <view class="page_top">
+            <view class="weui-cells weui-cell_access user-head">
+                <navigator class="weui-cell" url="/pages/user/aid_info?id={{info.call.creatorId}}">
+                    <view class="weui-cell__hd">
+                        <image src="{{res}}/{{info.call.creatorImageName}}" wx:if="{{info.call.creatorImageName}}"></image>
+                        <image src="/image/default-photo.png" wx:else></image>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view class="name">{{info.call.creatorName}}</view>
+                        <view class="desc">{{info.call.createTime}}</view>
+                    </view>
+                    <view class="weui-cell__ft">
+                        <view class="footer_content">
+                            <image src="/image/help-icon4.png"></image>
+                            <text>急救信息</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="lost-info">
+                <view class="img-warp">
+                    <swiper class="swiper" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#f8494c">
+                        <block wx:for="{{movies}}" wx:for-index="index" wx:key="{{index}}">
+                            <swiper-item>
+                                <image src="{{res}}/{{item}}" class="slide-image" mode="aspectFit" data-id="{{res}}/{{item}}" data-url="{{movies}}" bindtap="perviewImg" />
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+                <view class="weui-cells lost-content">
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/help-icon1.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 走失人信息</view>
+                            <view class="content content-info">
+                                <view class="lost-name">{{info.call.trueName}}</view>
+                                <image src="/image/boy.png" wx:if="{{info.call.sex==='男'}}"></image>
+                                <image src="/image/girl.png" wx:else></image>
+                                <view class="age">{{info.call.age}}岁</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/help-icon2.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 走失时间</view>
+                            <view class="content">{{info.call.lossTime}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/help-icon3.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 走失人地点</view>
+                            <view class="content location">
+                                <text bindtap="openLocation" data-name="{{info.call.lossAddress}}" data-longitude="{{info.call.longitude}}" data-latitude="{{info.call.latitude}}">{{info.call.lossAddress}}</text>
+                                <text style='color:#333' wx:if="{{info.call.lossAddressOther}}"> {{info.call.lossAddressOther}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bottom-content" style="margin-top:16rpx">
+            <view class="switch_tab">
+                <view class="btn {{status==1?'active':''}}" bindtap="switchType" id="1"> 走失描述 </view>
+                <view class="btn {{status==2?'active':''}}" bindtap="switchType" id="2"> 线索 </view>
+            </view>
+            <view class="switch_warp">
+                <view wx:if="{{status==1}}" class="desc"> {{info.call.lossDescription}} </view>
+                <view class="clue_container" wx:if="{{status==2}}">
+                    <view class="weui-cells" wx:if="{{info.clues.length>0}}">
+                        <view class="weui-cell" wx:for="{{info.clues}}" wx:key="{{index}}">
+                            <view class="weui-cell__hd">
+                                <image src="{{res}}/{{item.imageName}}" class="clue_photo" wx:if="{{item.imageName}}"></image>
+                                <image src="/image/default-photo.png" class="clue_photo" wx:else></image>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <view class="clue-user">
+                                    <text>{{item.nickName}}</text>
+                                    <text>{{item.createTime}}</text>
+                                </view>
+                                <view class="theme-warp">
+                                    <view class="classname">{{item.content}}</view>
+                                    <block wx:if="{{item.createLocationAddress}}">
+                                        <view class="location">
+                                            <image src="/image/location-blue.png"></image>
+                                            <text bindtap="openLocation" data-name="{{item.createLocationAddress}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}">{{item.createLocationAddress}}</text>
+                                        </view>
+                                    </block>
+                                </view>
+                                <view class='screen-list' wx:if="{{item.imageNames.length>0}}">
+                                    <image src='{{res}}/{{screen}}' class="img-box" wx:for="{{item.imageNames}}" wx:for-item="screen" wx:key="{{index}}" data-id="{{res}}/{{screen}}" data-url="{{item.imageNames}}" bindtap="perviewImg"></image>
+                                </view>
+                                <view class="clue-reply" wx:if="{{item.replies.length>0}}">
+                                    <view class="reply-list" wx:for="{{item.replies}}" wx:for-item="reply" wx:key="{{index}}">
+                                        <text class="name">
+                                            <text>{{reply.fromNickName}}</text>
+                                            <text wx:if="{{reply.fromId == reply.toId}}">：</text>
+                                        </text>
+                                        <text class="type" wx:if="{{reply.fromId != reply.toId}}">回复 : </text>
+                                        <text class="msg">{{reply.content}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <image src="/image/tips-dog.png" class="reply-empty" wx:else></image>
+                </view>
+            </view>
+        </view>
+        <view class="option-bottom">
+            <navigator url="/pages/help/message?id={{info.call.labelId}}" class="btn default" hover-class="btn-active">
+                <image src="/image/card-icon7.png" class="icon"></image>
+                给家人留言
+            </navigator>
+            <view class="btn primary" bindtap="next_contact">
+                <image src="/image/card-icon5.png" class="icon"></image>
+                联系家人
+            </view>
+        </view>
+    </view>
+    <view class="page" wx:if="{{item}}">
+        <view class="page_hd">
+            <image src="/image/babyBg.png" class="card-bg"></image>
+            <view class="card">
+                <view class="card__bd">
+                    <view class="user-info">
+                        <image src="{{res}}/{{item.label.imageName}}" wx:if="{{item.label.imageName}}"></image>
+                        <image src="/image/default-photo.png" wx:else></image>
+                        <view class="card__bd">
+                            <view class="username">{{item.label.trueName || '保密'}}</view>
+                            <view>{{item.label.sex}}
+                                <text class="age" wx:if="{{item.label.age}}">{{item.label.age}}岁</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="title-tips">体征特征</view>
+                    <view class="grids">
+                        <view class="grid" style="width:40%">
+                            <view class="head">身高（cm）</view>
+                            <view class="cell_title">{{item.label.height || '暂无'}}</view>
+                        </view>
+                        <view class="grid" style="width:40%">
+                            <view class="head">体重（公斤）</view>
+                            <view class="cell_title">{{item.label.weight || '暂无'}}</view>
+                        </view>
+                        <view class="grid" style="width:20%">
+                            <view class="head">血型</view>
+                            <view class="cell_title">{{item.label.bloodType || '暂无'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="card__hd">
+                    <image src="{{res}}/{{item.label.dressImageName}}" data-id="{{res}}/{{item.label.dressImageName}}" bindtap="perviewImg" wx:if="{{item.label.dressImageName}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="detail-box">
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon1.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">过敏史</view>
+                    <view class="desc">{{item.label.allergic||'暂无'}}</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon2.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">在服药物</view>
+                    <view class="desc">{{item.label.pill||'暂无'}}</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon3.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">医疗笔记</view>
+                    <view class="desc">{{item.label.cureNote||'暂无'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="option-bottom">
+            <navigator url="/pages/help/message?id={{item.label.labelId}}" class="btn default" hover-class="btn-active">
+                <image src="/image/card-icon7.png" class="icon"></image>
+                给家人留言
+            </navigator>
+            <view class="btn primary" bindtap="next_contact">
+                <image src="/image/card-icon5.png" class="icon"></image>
+                联系家人
+            </view>
+        </view>
+    </view>
+    <view class="contact-box" wx:if="{{tips}}">
+        <view class="mask"></view>
+        <view class="diglog-warp">
+            <view class="tips_image">
+                <image src="/image/help-tips.png"></image>
+                <view class="tips-font">
+                    <view class="classname">我迷路了,</view>
+                    <view class="classname">请帮我联系家人吧!</view>
+                </view>
+            </view>
+            <view class="btn-area" bindtap="close"> 好的 </view>
+        </view>
+    </view>
+    <view class="contact-box" wx:if="{{contact_box}}">
+        <view class="mask" bindtap="hide"></view>
+        <view class="diglog-warp">
+            <view class="cells-list">
+                <block wx:if="{{info}}">
+                    <view class="cell" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}" wx:if="{{info.call.contactorPhoneNo1}}">
+                        <view class="cell-title" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}">{{info.call.contactorTrueName1}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}"></image>
+                    </view>
+                    <view class="cell" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}" wx:if="{{info.call.contactorPhoneNo2}}">
+                        <view class="cell-title" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}">{{info.call.contactorTrueName2}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}"></image>
+                    </view>
+                </block>
+                <block wx:if="{{item}}">
+                    <view class="cell" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}" wx:if="{{item.label.contactorPhoneNo1 && item.label.contactorPhoneNo1!='*'}}">
+                        <view class="cell-title" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}">{{item.label.contactorTrueName1}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}"></image>
+                    </view>
+                    <view class="cell" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}" wx:if="{{item.label.contactorPhoneNo2 && item.label.contactorPhoneNo2!='*'}}">
+                        <view class="cell-title" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}">{{item.label.contactorTrueName2}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}"></image>
+                    </view>
+                </block>
+                <view class="cell" bindtap="call" data-id="4008-950-110">
+                    <view class="cell-title" bindtap="call" data-id="4008-950-110">钦家客服电话</view>
+                    <image src="/image/card-phone2.png" class="icon" bindtap="call" id="4008-950-110"></image>
+                </view>
+                <view class="cell" bindtap="call" data-id="110">
+                    <view class="cell-title" bindtap="call" data-id="110">报警电话</view>
+                    <image src="/image/card-phone2.png" class="icon" bindtap="call" id="110"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

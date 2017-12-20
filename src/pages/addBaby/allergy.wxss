@@ -1,0 +1,19 @@
+page{
+  background-color: #f3f5f5;
+  padding-top: 5px;
+}
+.page{
+  background-color: #fff;
+  padding: 10px;
+}
+.page textarea{
+  width: 100%;
+}
+.confirm{
+  height: 40px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 40px;
+  color: #f00;
+}

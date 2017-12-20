@@ -1,0 +1,36 @@
+<view>
+  <view class="page">
+    <view class='contacts' wx:for="{{contacts}}" wx:for-index="idx" wx:for-item="itemName" wx:key="name" bindtap='addToContact' id="{{idx}}">
+      <text class='name'>{{itemName.name}}</text>
+      <text class='phone'>{{itemName.phone}}</text>
+      <image id="{{idx}}" class='edit' src='/image/edit.png' catchtap='editContact'></image>
+    </view>
+    <view class='addContent' bindtap='addContact'>
+      <text>+</text> 添加联系人 </view>
+  </view>
+  <view wx:if="{{cover}}" class='mask'></view>
+  <view wx:if="{{cover}}" class='contact-box'>
+    <view class='head'>编辑联系人</view>
+    <view class='list'>
+      <view class='left-info'>
+        联系人
+      </view>
+      <view class='right-info'>
+        <input type='text' placeholder='请输入不超过5位的联系人名称' value='{{newName}}' bindinput='verifyName' />
+      </view>
+    </view>
+    <view class='list'>
+      <view class='left-info'>
+        手机号
+      </view>
+      <view class='right-info'>
+        <input type='text' placeholder='请输入11位手机号码' value='{{newPhone}}' bindinput='verifyPhone'/>
+      </view>
+    </view>
+    <view class='box-foot'>
+      <view class='cancel' bindtap='cancel'>取消</view>
+      <view class='confirm' bindtap='confirm'>确定</view>
+    </view>
+  </view>
+  <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+</view>

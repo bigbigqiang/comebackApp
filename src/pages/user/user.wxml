@@ -1,0 +1,80 @@
+<!--pages/user/user.wxml 个人中心-->
+<view class="container">
+    <view class="page page_userinfo">
+        <view class="weui-cells" wx:if="{{userInfo}}">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="name">{{userInfo.nickName}}
+                        <image src="/image/boy.png" wx:if="{{userInfo.gender===1}}"></image>
+                        <image src="/image/girl.png" wx:else></image>
+                    </view>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+        <button class="weui-cells weui-cell_access active" open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none" wx:else>
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                        <image src="/image/default-photo.png"></image>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view>微信登录</view>
+                        <!-- <view>注册钦家号</view> -->
+                    </view>
+                    <view class="weui-cell__ft"></view>
+                </view>
+            </button>
+        <view class="weui-cells info_cells">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="/image/app-icon.png"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="name">钦家APP
+
+                    </view>
+                    <view class="desc">防走失的定位贴管家，请在应用商店下载安装“钦家APP”，解锁更多功能</view>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="/image/user-shop.png"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="name">钦家商城
+
+                    </view>
+                    <view class="desc">钦家智能防走失定位帖，全球独创的个人智能身份标识</view>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="/image/user-alarm.png"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="name">我的求助
+
+                    </view>
+                    <view class="desc">家人一旦走失，快速发布求助，实时掌握定位</view>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="/image/user-time.png"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="name">我的时光
+                    </view>
+                    <view class="desc">加入钦家，记录家人的美好时光</view>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+    </view>
+</view>

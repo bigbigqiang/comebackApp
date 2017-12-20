@@ -1,0 +1,19 @@
+<!--pages/scan/index.wxml 扫码处理页面-->
+<view class="container">
+    <view class="page">
+
+    </view>
+    <view class="contact-box" wx:if="{{tips}}">
+        <view class="mask"></view>
+        <view class="diglog-warp">
+            <view class="tips_image">
+                <image src="/image/help-tips.png"></image>
+                <view class="tips-font">
+                    <view class="classname">{{msg.name}},</view>
+                    <view class="classname">{{msg.content}}!</view>
+                </view>
+            </view>
+            <view class="btn-area" bindtap="hide"> 好的 </view>
+        </view>
+    </view>
+</view>

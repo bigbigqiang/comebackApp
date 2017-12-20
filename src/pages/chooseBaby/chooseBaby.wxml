@@ -1,0 +1,25 @@
+<view>
+    <view class="page">
+        <view class='noBaby' wx:if="{{!babys.length}}">
+          <image src='/image/tips-dog.png'></image>
+          <view>您还没有宝贝，赶快添加一个吧</view>
+        </view>
+        <view class='babys' wx:for="{{babys}}" wx:for-index="ide" wx:for-item="itemName" bindtap='showTooltip'>
+          <view class='left'>
+            <image class='photo' src='{{itemName.photo}}'></image>
+            <view class='info'>
+              <view class='up'>
+                <image wx:if="{{itemName.babyId}}" src="/image/babyId.png"></image>
+                {{itemName.name}}
+              </view>
+              <view class='down'>
+                <image src="{{itemName.sex == 1 ? '/image/boy.png':'/image/girl2.png'}}"></image>
+                <text>{{itemName.age}}岁</text>
+              </view>
+            </view>
+          </view>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='addContent' bindtap='toAddBaby'> <text>+</text> 添加宝贝 </view>
+    </view>
+</view>

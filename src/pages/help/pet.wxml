@@ -1,0 +1,276 @@
+<!--pages/help/pet.wxml 宠物详情-->
+<import src="/common/loading.wxml" />
+<view class="container">
+    <template is="loading" data="{{showloading: showloading}}" />
+    <view class="page" wx:if="{{info}}">
+        <view class="page_top">
+            <view class="weui-cells weui-cell_access user-head">
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                        <image src="{{res}}/{{info.call.creatorImageName}}" wx:if="{{info.call.creatorImageName}}"></image>
+                        <image src="/image/default-photo.png" wx:else></image>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view class="name">{{info.call.creatorName}}</view>
+                        <view class="desc">{{info.call.createTime}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="lost-info">
+                <view class="img-warp">
+                    <swiper class="swiper" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#f8494c">
+                        <block wx:for="{{movies}}" wx:for-index="index" wx:key="{{index}}">
+                            <swiper-item>
+                                <image src="{{res}}/{{item}}" class="slide-image" mode="aspectFit" data-id="{{res}}/{{item}}" data-url="{{movies}}" bindtap="perviewImg" />
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+                <view class="award" wx:if="{{info.call.award && info.call.award!=0}}">
+                    <image src='/image/award.png'></image>
+                    <view style='display:inline-block;vertical-align: middle'> 帮主人寻回爱宠可获得赏金
+                        <text>{{info.call.award}}</text> 元
+                    </view>
+                </view>
+                <view class="weui-cells lost-content">
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/help-icon2.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 走失时间</view>
+                            <view class="content">{{info.call.lossTime}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/help-icon3.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 走失地点</view>
+                            <view class="content location">
+                                <text bindtap="openLocation" data-name="{{info.call.lossAddress}}" data-longitude="{{info.call.longitude}}" data-latitude="{{info.call.latitude}}">{{info.call.lossAddress}}</text>
+                                <text style='color:#333' wx:if="{{info.call.lossAddressOther}}"> {{info.call.lossAddressOther}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="/image/pet-icon4.png"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="title"> 备注</view>
+                            <view class="content">{{info.call.lossDescription}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bottom-content" style="margin-top:16rpx">
+            <view class="switch_tab">
+                <view class="btn {{status==1?'active':''}}" bindtap="switchType" id="1"> 宠物信息 </view>
+                <view class="btn {{status==2?'active':''}}" bindtap="switchType" id="2"> 寻宠线索 </view>
+            </view>
+            <view class="switch_warp">
+                <view wx:if="{{status==1}}" class="weui-cells lost-content">
+                    <view class="weui-cell">
+                        <text class="pet-title"> 丢失宠物：</text>
+                        <view class="content content-info">
+                            <view class="lost-name">{{info.call.trueName}}</view>
+                            <image src="/image/mu.png" wx:if="{{info.call.sex==='母'}}"></image>
+                            <image src="/image/gong.png" wx:else></image>
+                            <view> {{info.call.age}} </view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <text class="pet-title"> 宠物品种：</text>
+                        <view class="content content-info">
+                            <view class="lost-name">{{info.call.variety}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <text class="pet-title"> 绝育状态：</text>
+                        <view class="content content-info">
+                            <view class="lost-name" wx:if="{{item.label.sterilization==0}}">未绝育</view>
+                            <view class="lost-name" wx:elif="{{item.label.sterilization==1}}">已绝育</view>
+                            <view class="lost-name" wx:else>不确定</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <text class="pet-title"> 爱吃主粮：</text>
+                        <view class="content content-info">
+                            <view class="lost-name">{{info.call.food||'暂无'}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-cell">
+                        <text class="pet-title"> 其他说明：</text>
+                        <view class="content content-info">
+                            <view class="lost-name">{{info.call.comment||'暂无'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="clue_container" wx:if="{{status==2}}">
+                    <view class="weui-cells" wx:if="{{info.clues.length>0}}">
+                        <view class="weui-cell" wx:for="{{info.clues}}" wx:key="{{index}}">
+                            <view class="weui-cell__hd">
+                                <image src="{{res}}/{{item.imageName}}" class="clue_photo" wx:if="{{item.imageName}}"></image>
+                                <image src="/image/default-photo.png" class="clue_photo" wx:else></image>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <view class="clue-user">
+                                    <text>{{item.nickName}}</text>
+                                    <text>{{item.createTime}}</text>
+                                </view>
+                                <view class="theme-warp">
+                                    <view class="classname">{{item.content}}</view>
+                                    <block wx:if="{{item.createLocationAddress}}">
+                                        <view class="location">
+                                            <image src="/image/location-blue.png"></image>
+                                            <text bindtap="openLocation" data-name="{{item.createLocationAddress}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}">{{item.createLocationAddress}}</text>
+                                        </view>
+                                    </block>
+                                </view>
+                                <view class='screen-list' wx:if="{{item.imageNames.length>0}}">
+                                    <image src='{{res}}/{{screen}}' class="img-box" wx:for="{{item.imageNames}}" wx:for-item="screen" wx:key="{{index}}" data-id="{{res}}/{{screen}}" data-url="{{item.imageNames}}" bindtap="perviewImg"></image>
+                                </view>
+                                <view class="clue-reply" wx:if="{{item.replies.length>0}}">
+                                    <view class="reply-list" wx:for="{{item.replies}}" wx:for-item="reply" wx:key="{{index}}">
+                                        <text class="name">
+                                            <text>{{reply.fromNickName}}</text>
+                                        <text wx:if="{{reply.fromId == reply.toId}}">：</text>
+                                        </text>
+                                        <text class="type" wx:if="{{reply.fromId != reply.toId}}">回复 : </text>
+                                        <text class="msg">{{reply.content}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <image src="/image/tips-dog.png" class="reply-empty" wx:else></image>
+                </view>
+            </view>
+        </view>
+        <view class="option-bottom">
+            <navigator url="/pages/help/message?id={{info.call.labelId}}" class="btn default" hover-class="btn-active">
+                <image src="/image/card-icon7.png" class="icon"></image>
+                留电话
+            </navigator>
+            <view class="btn primary" bindtap="next_contact">
+                <image src="/image/card-icon5.png" class="icon"></image>
+                联系主人
+            </view>
+        </view>
+    </view>
+    <view class="page" wx:if="{{item}}">
+        <view class="page_hd">
+            <image src="/image/petBg.png" class="card-bg"></image>
+            <view class="card">
+                <view class="card__bd">
+                    <view class="user-info">
+                        <image src="{{res}}/{{item.label.imageName}}" wx:if="{{item.label.imageName}}"></image>
+                        <image src="/image/default-photo2.png" wx:else></image>
+                        <view class="card__bd">
+                            <view class="username">
+                                <text>   {{item.label.trueName || '保密'}}</text>
+                                <image src="/image/mu.png" wx:if="{{item.label.sex==='母'}}"></image>
+                                <image src="/image/gong.png" wx:else></image>
+                            </view>
+                            <view class="variety">{{item.label.variety || '保密'}}</view>
+                            <view wx:if="{{item.label.age}}" class="age"> {{item.label.age}} </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="card__hd" style='text-align:center'>
+                    <image src="{{res}}/{{item.label.dressImageName}}" data-id="{{res}}/{{item.label.dressImageName}}" bindtap="perviewImg" wx:if="{{item.label.dressImageName}}"></image>
+                    <image src="/image/default-photo2.png" data-id="/image/default-photo2.png" bindtap="perviewImg" wx:else></image>
+                    <view>{{item.label.dressDsp}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="detail-box">
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/pet-icon2.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">绝育状态</view>
+                    <view class="desc" wx:if="{{item.label.sterilization==0}}">未绝育</view>
+                    <view class="desc" wx:elif="{{item.label.sterilization==1}}">已绝育</view>
+                    <view class="desc" wx:else>不确定</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/pet-icon1.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">爱吃主粮</view>
+                    <view class="desc">{{item.label.food||'暂无'}}</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/pet-icon3.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">其他说明</view>
+                    <view class="desc">{{item.label.comment||'暂无'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="option-bottom">
+            <navigator url="/pages/help/message?id={{item.label.labelId}}" class="btn default" hover-class="btn-active">
+                <image src="/image/card-icon7.png" class="icon"></image>
+                留电话
+            </navigator>
+            <view class="btn primary" bindtap="next_contact">
+                <image src="/image/card-icon5.png" class="icon"></image>
+                联系主人
+            </view>
+        </view>
+    </view>
+    <view class="contact-box" wx:if="{{tips}}">
+        <view class="mask"></view>
+        <view class="diglog-warp">
+            <view class="tips_image">
+                <image src="/image/help-tips2.png"></image>
+                <view class="tips-font">
+                    <view class="classname">我迷路了,</view>
+                    <view class="classname">请帮我联系主人吧!</view>
+                </view>
+            </view>
+            <view class="btn-area" bindtap="close"> 好的 </view>
+        </view>
+    </view>
+    <view class="contact-box" wx:if="{{contact_box}}">
+        <view class="mask" bindtap="hide"></view>
+        <view class="diglog-warp">
+            <view class="cells-list">
+                <block wx:if="{{info}}">
+                    <view class="cell" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}" wx:if="{{info.call.contactorPhoneNo1}}">
+                        <view class="cell-title" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}">{{info.call.contactorTrueName1}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{info.call.contactorPhoneNo1}}"></image>
+                    </view>
+                    <view class="cell" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}" wx:if="{{info.call.contactorPhoneNo2}}">
+                        <view class="cell-title" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}">{{info.call.contactorTrueName2}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{info.call.contactorPhoneNo2}}"></image>
+                    </view>
+                </block>
+                <block wx:if="{{item}}">
+                    <view class="cell" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}" wx:if="{{item.label.contactorPhoneNo1 && item.label.contactorPhoneNo1!='*'}}">
+                        <view class="cell-title" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}">{{item.label.contactorTrueName1}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{item.label.contactorPhoneNo1}}"></image>
+                    </view>
+                    <view class="cell" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}" wx:if="{{item.label.contactorPhoneNo2 && item.label.contactorPhoneNo2!='*'}}">
+                        <view class="cell-title" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}">{{item.label.contactorTrueName2}}</view>
+                        <image src="/image/card-phone2.png" class="icon" bindtap="call" data-id="{{item.label.contactorPhoneNo2}}"></image>
+                    </view>
+                </block>
+                <view class="cell" bindtap="call" data-id="4008-950-110">
+                    <view class="cell-title" bindtap="call" data-id="4008-950-110">钦家客服电话</view>
+                    <image src="/image/card-phone2.png" class="icon" bindtap="call" id="4008-950-110"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

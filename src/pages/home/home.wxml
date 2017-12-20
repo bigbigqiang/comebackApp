@@ -1,0 +1,47 @@
+<!--pages/home/home.wxml 首页-->
+<view class="container">
+    <view class="page">
+        <view class="page_hd">
+            <image src="/image/home-banner.png" class="banner_img"></image>
+            <!-- <view class="hd_title">钦家，带我回家</view>
+            <view class="hd_desc">- 智能防走失定位帖，家庭团圆不是梦 -</view> -->
+            <view class="btn-area">
+                <button type="primary" class="radius" bindtap="scan">扫码帮助TA</button>
+            </view>
+        </view>
+        <view class="page_bd">
+            <view class="grids">
+                <navigator class="grid-cell" bindtap="alert">
+                    <view class="icon">
+                        <image src="/image/home-shop.png"></image>
+                    </view>
+                    <view class="cell_title">防走失商城</view>
+                </navigator>
+                <navigator url="/pages/user/user" class="grid-cell">
+                    <view class="icon">
+                        <image src="/image/home-user.png"></image>
+                    </view>
+                    <view class="cell_title">个人中心</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="page_foot">
+            <image src="/image/bottom-logo.png"></image>
+        </view>
+    </view>
+    <button type='primary' size='mini' bindtap='toBindBaby'> 绑定家人</button>
+    <button type='primary' size='mini' bindtap='toBindPet'> 绑定宠物</button>
+    <view class="contact-box" wx:if="{{tips}}">
+        <view class="mask"></view>
+        <view class="diglog-warp">
+            <view class="tips_image">
+                <image src="/image/help-tips.png"></image>
+                <view class="tips-font">
+                    <view class="classname">{{msg.name}},</view>
+                    <view class="classname">{{msg.content}}!</view>
+                </view>
+            </view>
+            <view class="btn-area" bindtap="hide"> 好的 </view>
+        </view>
+    </view>
+</view>

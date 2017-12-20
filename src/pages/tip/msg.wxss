@@ -1,0 +1,40 @@
+/* pages/location/msg.wxss */
+.page_hd {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 120rpx 0;
+}
+
+.error-bg {
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+}
+
+.tips-desc {
+    padding-top: 30rpx;
+}
+
+.tips-desc .num {
+    font-size: 31rpx;
+    color: #535353;
+}
+
+.tips-desc .num text {
+    color: #485a81;
+    padding-left: 6rpx;
+}
+
+.bottom-msg {
+    text-align: center;
+    padding: 40rpx;
+    color: #888;
+}
+
+.bottom-msg text {
+    color: #586d92;
+    padding-left: 6rpx;
+}

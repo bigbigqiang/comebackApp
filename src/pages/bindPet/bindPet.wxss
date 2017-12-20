@@ -1,0 +1,9 @@
+@import "../bindBaby/bindBaby";
+.head{
+  width: 50%;
+  margin: 20px auto;
+  height: 40px;
+  color: #888 ;
+  text-align: center;
+  line-height: 40px;
+}

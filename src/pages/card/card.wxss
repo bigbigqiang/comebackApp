@@ -1,0 +1,222 @@
+/* pages/card/card.wxss */
+
+.page_hd {
+    position: relative;
+    margin: 26rpx 30rpx 50rpx;
+    height: 300rpx;
+}
+
+.card {
+    color: #fff;
+    background: transparent;
+    border-radius: 10rpx;
+    padding: 20rpx 25rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 30rpx;
+}
+
+.card__bd {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.card__hd image {
+    width: 180rpx;
+    height: 240rpx;
+    border-radius: 10rpx;
+    margin-left: 30rpx;
+}
+
+.user-info {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.user-info image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+    border-radius: 100%;
+    display: block;
+}
+
+.title-tips {
+    padding: 24rpx 0;
+}
+
+.username {
+    font-size: 34rpx;
+}
+
+.age {
+    padding-left: 10rpx;
+}
+
+.grids {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid {
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    font-size: 27rpx;
+    overflow: hidden;
+}
+
+.grid .cell_title {
+    padding: 10rpx 0;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 320rpx;
+    border-radius: 10rpx;
+    /* box-shadow: 0 1px 2rpx 0 #f8494c;
+    background-color: #f8494c; */
+}
+
+.detail-box {
+    position: relative;
+    background-color: #fff;
+    line-height: 1.41176471;
+    margin-top: 24rpx;
+    margin-bottom:120rpx;
+}
+
+.box-cells {
+    padding: 20rpx 36rpx 14rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+}
+
+.cells-hd image {
+    width: 38rpx;
+    height: 38rpx;
+    display: block;
+    margin-right: 20rpx;
+}
+
+.detail-box .title {
+    color: #666;
+}
+
+.detail-box .desc {
+    margin-top: 10rpx;
+}
+
+/*bottom  */
+
+.option-bottom {
+    display: flex;
+    position: fixed;
+    z-index: 500;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+}
+
+.btn {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 25rpx 0;
+    text-align: center;
+    position: relative;
+    border-top: solid 2rpx #dbdbdb;
+}
+
+.btn image {
+    width: 34rpx;
+    height: 34rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn.primary:active {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #f0474a;
+}
+
+.btn.primary {
+    background-color: #f8494c;
+    color: #fff;
+    border-top: solid 2rpx #f84943;
+}
+
+.btn.btn-active {
+    background-color: #ececec;
+    color: #333;
+}
+
+/*弹出框  */
+
+.cells-list {
+    position: relative;
+    background-color: #fff;
+    line-height: 1.41176471;
+    margin-top: 16rpx;
+    border-radius: 6rpx;
+    margin-bottom: 10rpx;
+}
+
+.cells-list .cell {
+    padding: 24rpx 36rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cells-list .cell:active {
+    background-color: #ececec;
+}
+
+.cells-list .cell::after {
+    content: " ";
+    position: absolute;
+    left: 30rpx;
+    bottom: 0;
+    right: 30rpx;
+    height: 1rpx;
+    border-bottom: 1rpx solid #dbdbdb;
+    color: #dbdbdb;
+}
+
+.cells-list .cell:last-child::after {
+    display: none;
+}
+
+.cells-list .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.detail-box .desc {
+    word-break: break-all;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

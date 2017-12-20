@@ -1,0 +1,20 @@
+<!--pages/home/home.wxml 首页-->
+<view>
+    <view class="page">
+        <view class='choosePosition' bindtap='choosePosition'>
+        {{position}}
+          <view class='dropDown'></view>
+        </view> 
+        <view class='uploadImage' bindtap='uploadImage'>
+          <image mode='scaleToFill' src="{{imageSrc}}"></image>
+          <view wx:if="{{!taped}}" class='img-text'>上传绑定物品照片</view>
+        </view>
+        <view class='remarker'>
+          <input type='text' placeholder='添加备注，管理更方便' placeholder-style='color:#b7b7b7;' />
+        </view>
+        <view class="page_foot">
+            <view class='nextTip' bindtap='toChooseBaby'>下一步</view>
+        </view>
+    </view>
+    <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+</view>

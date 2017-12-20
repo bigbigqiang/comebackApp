@@ -1,0 +1,60 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #fff;
+  border-top: 1px solid #ececec;
+}
+.choosePosition{
+  width: 50%;
+  margin: 20px auto;
+  height: 50px;
+  border-radius: 35px;
+  background-color: #fff ;
+  color: #919191 ;
+  text-align: center;
+  line-height: 50px;
+  border:1px solid #919191;
+  position: relative;
+}
+.uploadImage{
+  height: 350px;
+  width: 75%;
+  margin:20px auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.uploadImage image{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.img-text{
+  text-align: center;
+  color: #a7a7a7;
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+}
+.remarker{
+  width: 50%;
+  height: 30px;
+  border-bottom: 1px solid #f4f4f4;
+  margin: 0  auto;
+  text-align: center;
+}
+.remarker input{
+  color: #b7b7b7;
+}
+.dropDown{
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #f64a46;
+  border-bottom: 2px solid #f64a46;
+  position: absolute;
+  right: 18px;
+  top: 13px;
+  transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+}

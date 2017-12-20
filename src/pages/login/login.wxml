@@ -1,0 +1,24 @@
+<!--pages/home/home.wxml 首页-->
+<view>
+  <image class='logo' src='/image/logo2.png'></image>
+  <view class='form'>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/account.png'></image>
+      </view>
+      <input type='text' placeholder='请输入您的手机号' bindinput='getAccount' />
+    </view>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/password.png'></image>
+      </view>
+       <input type='text' password='{{!visible}}' placeholder='请输入密码' bindinput='getPassword' />
+       <view class='visible'>
+        <image src='{{visible?"/image/visible.png":"/image/invisible.png"}}' bindtap='swichVisible'></image>
+       </view>
+    </view>
+    <text class='regist' bindtap='toRegister'>注册账号</text>
+    <text class='forget' bindtap='findpwd'>忘记密码</text>
+  </view> 
+  <view class='confirm {{disabled?"button-disable":""}}' bindtap='login'>登录</view>
+</view>

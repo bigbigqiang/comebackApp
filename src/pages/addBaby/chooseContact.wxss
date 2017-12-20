@@ -1,0 +1,92 @@
+page{
+  background-color: #f3f5f5;
+  padding-top: 5px;
+}
+.contacts{
+  height: 50px;
+  border-top:1px solid #f3f5f5;
+  background-color: #fff;
+  padding-left: 8px;
+  position: relative;
+}
+.name{
+  height: 50%;
+  width: 100%;
+  line-height: 37px;
+  color: #888;
+  display: block;
+}
+.phone{
+  height: 50%;
+  width: 100%;
+  display: block;
+  color: #888;
+  font-size: 26rpx;
+}
+.edit{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.contact-box{
+  z-index: 5000;
+  width: 80%;
+  height: 206px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 6px;
+}
+.head{
+  text-align: center;
+  height: 50px;
+  line-height: 40px;
+}
+.list{
+  height: 50px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 10px;
+}
+.left-info{
+  width: 20%;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+.right-info{
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+.right-info input{
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+}
+.box-foot{
+  height: 40px;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 10px;
+}
+.box-foot view{
+  height: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+}
+.cancel{
+  width: 50%;
+}
+.confirm{
+  width: 49.5%;
+  border-left: 1px solid #e6e6e6;
+  color:#f42e3f;
+}

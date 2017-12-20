@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/user/user",
+    "pages/help/detail",
+    "pages/help/pet",
+    "pages/help/message",
+    "pages/user/aid_info",
+    "pages/scan/index",
+    "pages/bindBaby/bindBaby",
+    "pages/bindPet/bindPet",
+    "pages/chooseBaby/chooseBaby",
+    "pages/choosePet/choosePet",
+    "pages/addBaby/addBaby",
+    "pages/addPet/addPet",
+    "pages/addBaby/allergy",
+    "pages/addBaby/drug",
+    "pages/addBaby/medical",
+    "pages/addBaby/chooseContact",
+    "pages/addPet/chooseContact",
+    "pages/addPet/food",
+    "pages/addPet/desc",
+    "pages/bindSuccess/bindSuccess",
+    "pages/petSuccess/petSuccess",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/findpwd/findpwd",
+    "pages/findpwd/pwd",
+    "pages/tip/msg"
+  ],
+  "window": {
+   "navigationBarTitleText": "钦,带我回家",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f3f5f5",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": false
+  },
+    
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

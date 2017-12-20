@@ -1,0 +1,91 @@
+<!--pages/card/card.wxml 扫描正常的定位贴-->
+<view class="container">
+    <view class="page">
+        <view class="page_hd">
+            <image src="/image/babyBg.png" class="card-bg"></image>
+            <view class="card">
+                <view class="card__bd">
+                    <view class="user-info">
+                        <image src="/image/demo-photo.jpg"></image>
+                        <view class="card__bd">
+                            <view class="username">袁**</view>
+                            <view>女 <text class="age">10岁</text></view>
+                        </view>
+                    </view>
+                    <view class="title-tips">体征特征</view>
+                    <view class="grids">
+                        <view class="grid" style="width:40%">
+                            <view class="head">身高（cm）</view>
+                            <view class="cell_title">**</view>
+                        </view>
+                        <view class="grid" style="width:40%">
+                            <view class="head">体重（公斤）</view>
+                            <view class="cell_title">**</view>
+                        </view>
+                        <view class="grid" style="width:20%">
+                            <view class="head">血型</view>
+                            <view class="cell_title">**</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="card__hd">
+                    <image src="/image/demo-photo2.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="detail-box">
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon1.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">过敏史</view>
+                    <view class="desc">暂无</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon2.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">在服药物</view>
+                    <view class="desc">******</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon3.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">医疗笔记</view>
+                    <view class="desc">******</view>
+                </view>
+            </view>
+        </view>
+        <view class="option-bottom">
+            <navigator url="/pages/help/message" class="btn default" hover-class="btn-active">
+                <image src="/image/card-icon7.png" class="icon"></image>
+                  给家人留言
+            </navigator>
+            <view class="btn primary" bindtap="next_contact">
+                <image src="/image/card-icon5.png" class="icon"></image>
+                联系家人
+            </view>
+        </view>
+    </view>
+    <view class="contact-box" wx:if="{{contact_box}}">
+        <view class="mask" bindtap="hide"></view>
+        <view class="diglog-warp">
+            <view class="cells-list">
+                <view class="cell" bindtap="call" id="4008-950-110">
+                    <view class="cell-title">钦家客服电话</view>
+                    <image src="/image/card-phone2.png" class="icon"></image>
+                </view>
+                <view class="cell" bindtap="call" id="110">
+                    <view class="cell-title">报警电话</view>
+                    <image src="/image/card-phone2.png" class="icon"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

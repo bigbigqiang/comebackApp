@@ -1,0 +1,84 @@
+<view>
+    <view class="page">
+        <view class='avatar' bindtap='actionSheetTap'>
+          <text class='left-info'>头像</text>
+          <image class='avatar-photo' src="{{avatarSrc}}"></image>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='info-list'>
+          <text class='left-info'>姓名</text>
+          <view class='picker'>
+            <input type='text' class='pickerText text-right' placeholder='2-10个字' placeholder-class='name-placeholder' />
+          </view>
+        </view>
+        <view class='info-list'>
+          <text class='left-info'>性别</text>
+          <picker class='picker text-right' mode="selector" value="{{index}}" range="{{sex}}" bindchange='listenSexPicker'>
+            <view class='pickerText'>{{sex[sexIndex]}}</view>
+          </picker>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='info-list'>
+          <text class='left-info'>出生日期</text>
+          <picker class='picker text-right' mode="date" value="{{date}}" start="1917-01-01" end="2018-01-01" bindchange='listenDatePicker'>
+            <view class='pickerText'>{{date}}</view>
+          </picker>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='splitLine'></view>
+        <view class='contact' bindtap='chooseContact'>
+          <text class='left-info'>急救联系人</text>
+          <text class='prompt'>(仅在发布求助信息以后，公开联系人)</text>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='contact' wx:for="{{contacts}}" wx:for-index="idx" wx:for-item="itemName" wx:key="id" id="{{idx}}">
+          <text class='left-info'>{{itemName.name}}</text>
+          <text class='prompt'>{{itemName.phone}}</text>
+          <image class='delete' src='/image/delete2.png' catchtap='deleteContact' id="{{idx}}"></image> 
+        </view>
+        <view class='warnInfo'>
+          <view class='warn-img'>
+            <image src='/image/note.png'></image>
+          </view>
+          <text>以下信息仅在宝贝不见时对扫码人可见，以便找到宝贝的好心人能更及时的为您提供帮助</text>
+        </view>
+        <view class='info-list'>
+          <view class='left-info'>
+            <text>身高</text>
+            <text class='unit'> (cm)</text>
+          </view>
+          <input type='digit' class='input-info' bindblur="verifyH" />
+        </view>
+        <view class='info-list'>
+          <view class='left-info'>
+            <text>体重</text>
+            <text class='unit'> (kg)</text>
+          </view>
+          <input type='digit' class='input-info' bindblur="verifyW" />
+        </view>
+        <view class='info-list'>
+          <text class='left-info'>血型</text>
+          <picker class='picker' mode="selector" value="{{index}}" range="{{bloodType}}" bindchange='listenBloodTypePicker'>
+            <view class='pickerText'>{{bloodType[bloodIndex]}}</view>
+          </picker>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='info-list' bindtap='toAllergy'>
+          <text class='left-info'>过敏情况</text>
+          <input class='info-name' disabled='true' placeholder='如：轻微花粉过敏' placeholder-style='font-size:26rpx;' value='{{allergyText}}'/>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='info-list' bindtap='toDrug'>
+          <text class='left-info'>在服药物</text>
+          <input class='info-name' disabled='true' placeholder='如：999感冒灵颗粒' placeholder-style='font-size:26rpx;' value='{{drugText}}'/>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+        <view class='info-list' bindtap='toMedical'>
+          <text class='left-info'>医疗说明</text>
+          <input class='info-name' disabled='true' placeholder='如：接触性过敏性皮炎' placeholder-style='font-size:26rpx;' value='{{medicalText}}'/>
+          <image class='arrow' src='/image/arrowright.png'></image> 
+        </view>
+    </view>
+    <view class='nextStep' bindtap='toSuccess' >下一步</view>
+    <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+</view>

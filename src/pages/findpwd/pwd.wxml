@@ -1,0 +1,24 @@
+<!--pages/home/home.wxml 首页-->
+<view>
+  <view class='form'>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/password.png'></image>
+      </view>
+       <input type='text' password='{{!visible}}' placeholder='请输入密码' bindinput='getPassword' />
+       <view class='visible'>
+        <image src='{{visible?"/image/visible.png":"/image/invisible.png"}}' bindtap='swichVisible'></image>
+       </view>
+    </view>
+    <view class='form-list'>
+      <view class='icon'>
+        <image src='/image/password.png'></image>
+      </view>
+       <input type='text' password='{{!confirmVisible}}' placeholder='请输入密码' bindinput='getConfirmPassword' />
+       <view class='visible'>
+        <image src='{{confirmVisible?"/image/visible.png":"/image/invisible.png"}}' bindtap='swichConfirmVisible'></image>
+       </view>
+    </view>
+  </view>
+  <view class='confirm {{disabled?"button-disable":""}}' bindtap='nextStep'>{{nextStep}}</view>
+</view>

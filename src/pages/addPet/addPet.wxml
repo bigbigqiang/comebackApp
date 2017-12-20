@@ -1,0 +1,89 @@
+<view>
+  <view class="page">
+    <view class='avatar' bindtap='actionSheetTap'>
+      <text class='left-info'>头像</text>
+      <image class='avatar-photo' src="{{avatarSrc}}"></image>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='info-list'>
+      <text class='left-info'>名字</text>
+      <view class='picker'>
+        <input type='text' class='pickerText text-right' placeholder='宠物的名字，1-5个字' placeholder-class='name-placeholder' />
+      </view>
+    </view>
+    <view class='info-list'>
+      <text class='left-info'>性别</text>
+      <picker class='picker text-right' mode="selector" value="{{sexIndex}}" range="{{sex}}" bindchange='listenSexPicker'>
+        <view class='pickerText'>{{sex[sexIndex]}}</view>
+      </picker>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='info-list'>
+      <text class='left-info'>品种</text>
+      <view class='picker text-right' bindtap='open'>
+        <view class='pickerText'>{{pet}}</view>
+      </view>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='info-list'>
+      <text class='left-info'>出日</text>
+      <picker class='picker text-right' mode="date" value="{{date}}" start="1917-01-01" end="2018-01-01" bindchange='listenDatePicker'>
+        <view class='pickerText'>{{date}}</view>
+      </picker>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+
+    <view class='splitLine'></view>
+    <view class='contact' bindtap='chooseContact'>
+      <text class='left-info'>急救联系人</text>
+      <text class='prompt'>(仅在发布求助信息以后，公开联系人)</text>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='contact' wx:for="{{contacts}}" wx:for-index="idx" wx:for-item="itemName" wx:key="id" id="{{idx}}">
+      <text class='left-info'>{{itemName.name}}</text>
+      <text class='prompt'>{{itemName.phone}}</text>
+      <image class='delete' src='/image/delete2.png' catchtap='deleteContact' id="{{idx}}"></image>
+    </view>
+    <view class='warnInfo'>
+      <view class='warn-img'>
+        <image src='/image/note.png'></image>
+      </view>
+      <text>以下信息仅在宝贝不见时对扫码人可见，以便找到宝贝的好心人能更及时的为您提供帮助</text>
+    </view>
+    <view class='info-list'>
+      <text class='left-info'>绝育状态</text>
+      <view class='picker' bindtap='chooseInferStatus'>
+        <view class='pickerText'>{{inferDefault}}</view>
+      </view>
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='info-list' bindtap='toFood'>
+      <text class='left-info'>爱吃主粮</text>
+      <input class='info-name' disabled='true' placeholder='请输入宝贝常吃的主粮' placeholder-style='font-size:26rpx;' value='{{foodText}}' />
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+    <view class='info-list' bindtap='toDesc'>
+      <text class='left-info'>其他说明</text>
+      <input class='info-name' disabled='true' placeholder='请输入需要备注的其他信息' placeholder-style='font-size:26rpx;' value='{{descText}}' />
+      <image class='arrow' src='/image/arrowright.png'></image>
+    </view>
+  </view>
+  <view class='nextStep' bindtap='toPetSuccess'>下一步</view>
+  <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+</view>
+<view wx:if="{{condition}}" class='mask'></view>
+<picker-view wx:if="{{condition}}" indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+  <view class="cityheader">
+    <view bindtap="open" class="city-cancel">取消</view>
+    <view bindtap="open" class="city-true">确定</view>
+  </view>
+  <picker-view-column>
+    <view wx:for="{{bigTypes}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{letters}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{pets}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+</picker-view>

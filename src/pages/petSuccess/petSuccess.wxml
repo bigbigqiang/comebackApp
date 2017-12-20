@@ -1,0 +1,56 @@
+<view>
+    <view class="page">
+        <view class='card'>
+          <image class='bg' src='/image/petBg.png'></image>
+          <view class='idInfo'>
+            <view class='top'>
+              <view class='avatar'>
+                <image src='/image/qq.png'></image>
+              </view>
+              <view class='mainInfo'>
+                <text>球球</text>
+                <image src='/image/mm.png'></image>
+              </view>
+            </view>
+            <text class='petType'>约克夏梗犬</text>
+            <view class='petAge'>2岁</view>
+          </view>
+          <view class='photo'>
+            <image src='/image/qq2.png'></image>
+          </view>
+        </view>
+        <view class='firstAid'>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/pet-icon2.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>绝育状态</text>
+              <text>未绝育</text>
+            </view>
+          </view>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/pet-icon1.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>爱吃主粮</text>
+              <text>暂无</text>
+            </view>
+          </view>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/pet-icon3.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>其他说明</text>
+              <text>暂无</text>
+            </view>
+          </view>
+        </view>
+        <view class='grids'>
+          <navigator class='grid-cell' url=''>商城选购定位贴</navigator>
+          <navigator class='grid-cell arctive' url=''>继续绑定定位贴</navigator>
+        </view>
+    </view>
+</view>

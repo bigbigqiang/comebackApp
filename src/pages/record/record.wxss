@@ -1,0 +1,64 @@
+/* pages/record/record.wxss */
+@import "/common/lib/weui.wxss";
+
+.weui-cells {
+    margin-top: 0;
+}
+
+.weui-cell::before {
+    left: 30rpx;
+}
+
+.weui-cell__hd {
+    color: #555;
+}
+
+.weui-cell__hd image {
+    width: 90rpx;
+    height: 90rpx;
+    margin-right: 22rpx;
+    border-radius: 100%;
+    display: block;
+}
+
+.weui-cell__ft {
+    font-size: 30rpx;
+}
+
+.weui-cells::after, .weui-cells::before {
+    border: none;
+}
+
+.weui-cell {
+    align-items: flex-start;
+}
+
+.weui-cell__ft image {
+    width: 80rpx;
+    height: 110rpx;
+    margin-top: 20rpx;
+}
+
+.weui-cell .time {
+    color: #888;
+    padding: 10rpx 0;
+    font-size: 30rpx;
+}
+
+.location {
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    font-size: 29rpx;
+}
+
+.location image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    padding-right: 10rpx;
+}
+
+.user-info .name {
+    color: #f8494c;
+}

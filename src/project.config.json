@@ -1,0 +1,97 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.2",
+	"appid": "wxd8da73399e4fb386",
+	"projectname": "iworld-wxa",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": [
+				{
+					"name": "test",
+					"pathName": "",
+					"title": "",
+					"cacheKey": ""
+				}
+			]
+		},
+		"conversation": {
+			"current": 0,
+			"list": [
+				{
+					"name": "test",
+					"query": "",
+					"boxQI": "",
+					"service": {}
+				}
+			]
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": 2,
+					"name": "已失效定位贴",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fwww.mm-mworld.com%3a8090%2fshare%2fscanLabel.do%3fl%3dTP000",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "未发布定位贴-显示扫码人数总计",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fwww.mm-mworld.com%3a8090%2fshare%2fscanLabel.do%3flabelGuid%3d00000test000006",
+					"scene": "1001"
+				},
+				{
+					"id": 4,
+					"name": "宠物发布求助贴-未悬赏",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fwww.mm-mworld.com%3a8090%2fshare%2fscanLabel.do%3fl%3dLcPet1109051",
+					"scene": "1001"
+				},
+				{
+					"id": 5,
+					"name": "宠物未发布求助贴",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fwww.mm-mworld.com%3a8090%2fshare%2fscanLabel.do%3fl%3dLcPet1109010",
+					"scene": "1001"
+				},
+				{
+					"id": 6,
+					"name": "宠物发布求助贴-已悬赏",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fwww.mm-mworld.com%3a8090%2fshare%2fscanLabel.do%3fl%3dLcPet1109052",
+					"scene": "1001"
+				},
+				{
+					"id": 5,
+					"name": "未发布求助贴-杨涛",
+					"pathName": "pages/scan/index",
+					"query": "q=http%3a%2f%2fm-talk.mobi%2fs%2f%3fl%3dLa6IaGS4nJ2F",
+					"scene": "1007"
+				},
+				{
+					"id": 8,
+					"name": "发送留言",
+					"pathName": "pages/help/message",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "NmSsWvpHy9OxvURufF9sCfWW-SXLFsD47Kpi58zRrBc@cr4dev",
+						"shareKey": "epTU3H-QitVHhNqPLWBHXHBq3ilzyZRnfKA4mQ4xjSY9-paDtrYa8GqIOVCvpI6DEW72eF7s2SK5c5Cit9YPug~~"
+					}
+				}
+			]
+		}
+	}
+}

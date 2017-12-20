@@ -1,0 +1,80 @@
+/* pages/user/user.wxss */
+@import "/common/lib/weui.wxss";
+
+.weui-cells {
+    margin-top: 0;
+}
+
+.weui-cell {
+    padding: 30rpx 50rpx;
+}
+
+.weui-cell__hd image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 30rpx;
+    border-radius: 100%;
+    display: block;
+}
+
+.weui-cells::after, .weui-cells::before {
+    border: none;
+}
+
+.name {
+    font-size: 34rpx;
+}
+
+.name image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-left: 14rpx;
+    vertical-align: middle;
+    padding-bottom: 6rpx;
+}
+
+.mobile, .desc {
+    color: #555;
+    margin-top: 4rpx;
+}
+
+.info_cells {
+    margin-top: 20rpx;
+    background-color: transparent;
+}
+
+.info_cells .weui-cell__hd image {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 0;
+    padding: 0 15rpx;
+}
+
+.info_cells .weui-cell:first-child image {
+    width: 80rpx;
+    height: 80rpx;
+    padding: 0;
+}
+
+.desc {
+    color: #888;
+    font-size: 30rpx;
+}
+
+.info_cells .weui-cell {
+    align-items: flex-start;
+}
+
+.weui-cell::before {
+    display: none;
+}
+
+.active:active {
+    background-color: #ececec;
+}
+
+.page_userinfo button {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}

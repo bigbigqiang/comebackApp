@@ -1,0 +1,8 @@
+<template name="firstAid">
+  <view>
+    <view class="page">
+        <textarea placeholder="{{placeholder}}" maxlength='200' value='{{value}}' bindinput='getMessage'></textarea>
+    </view>
+    <view class='confirm' bindtap='confirm'>确定</view>
+  </view>
+</template>

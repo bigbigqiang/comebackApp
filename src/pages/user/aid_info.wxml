@@ -1,0 +1,60 @@
+<!--pages/user/aid_info.wxml 急救信息-->
+<view class="container">
+    <view class="page aid_container">
+        <view class="detail-box">
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon6.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">体型特征</view>
+                    <view class="desc">
+                        <view class="grids">
+                            <view class="grid" style="width:40%">
+                                <view class="head">身高（cm）</view>
+                                <view class="cell_title">{{info.height||'暂无'}}</view>
+                            </view>
+                            <view class="grid" style="width:40%">
+                                <view class="head">体重（公斤）</view>
+                                <view class="cell_title">{{info.weight||'暂无'}}</view>
+                            </view>
+                            <view class="grid" style="width:20%">
+                                <view class="head">血型</view>
+                                <view class="cell_title">{{info.bloodType||'暂无'}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon1.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">过敏史</view>
+                    <view class="desc">{{info.allergic || '暂无'}}</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon2.png" class="icon"></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">在服药物</view>
+                    <view class="desc">{{info.pill || '暂无'}}</view>
+                </view>
+            </view>
+            <view class="box-cells">
+                <view class="cells-hd">
+                    <image src="/image/card-icon3.png" class="icon "></image>
+                </view>
+                <view class="cells-bd">
+                    <view class="title">医疗笔记</view>
+                    <view class="desc">{{info.cureNote || '暂无'}}</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+
+</view>

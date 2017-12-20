@@ -1,0 +1,2 @@
+<import src="/common/firstAid.wxml"/>
+<template is="firstAid" data="{{placeholder:'请输入宝贝常吃的主粮',value:foodText}}"/>

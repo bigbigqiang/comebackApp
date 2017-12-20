@@ -1,0 +1,70 @@
+<view>
+    <view class="page">
+        <view class='card'>
+          <image class='bg' src='/image/babyBg.png'></image>
+          <view class='idInfo'>
+            <view class='top'>
+              <view class='avatar'>
+                <image src='/image/yy.png'></image>
+              </view>
+              <view class='mainInfo'>
+                <text>袁**</text>
+                <text>女 *岁</text>
+              </view>
+            </view>
+            <view class='middle'>体型特征</view>
+            <view class='bottom'>
+              <view class='bodyType'>
+                <text>身高(cm)</text>
+                <text>***</text>
+              </view>
+              <view class='bodyType'>
+                <text>体重(公斤)</text>
+                <text>***</text>
+              </view>
+              <view class='bodyType'>
+                <text>血型</text>
+                <text>***</text>
+              </view>
+            </view>
+          </view>
+          <view class='photo'>
+            <image src='/image/yy2.png'></image>
+            <text>***</text>
+          </view>
+        </view>
+        <view class='firstAid'>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/card-icon1.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>过敏史</text>
+              <text>***</text>
+            </view>
+          </view>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/card-icon2.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>在服药物</text>
+              <text>***</text>
+            </view>
+          </view>
+          <view class='firstAidInfo'>
+            <view class='type'>
+              <image src='/image/card-icon3.png'></image>
+            </view>
+            <view class='typeInfo'>
+              <text>医疗笔记</text>
+              <text>***</text>
+            </view>
+          </view>
+        </view>
+        <view class='grids'>
+          <navigator class='grid-cell' url=''>商城选购定位贴</navigator>
+          <navigator class='grid-cell arctive' url=''>继续绑定定位贴</navigator>
+        </view>
+    </view>
+</view>
