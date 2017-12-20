@@ -29,8 +29,6 @@
             <image src="/image/bottom-logo.png"></image>
         </view>
     </view>
-    <button type='primary' size='mini' bindtap='toBindBaby'> 绑定家人</button>
-    <button type='primary' size='mini' bindtap='toBindPet'> 绑定宠物</button>
     <view class="contact-box" wx:if="{{tips}}">
         <view class="mask"></view>
         <view class="diglog-warp">

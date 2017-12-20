@@ -65,6 +65,18 @@ Page({
                     let host = app.api.hosts[uri.tag]
                     app.globalData.host = host
                     this.getcode(host, para, uri.tag)
+                } else if (res.result=="baby"){
+                  wx.navigateTo({
+                    url: '../bindBaby/bindBaby',
+                  })
+                } else if (res.result == "pet"){
+                  wx.navigateTo({
+                    url: '../bindPet/bindPet',
+                  })
+                } else if (res.result == "login"){
+                  wx.navigateTo({
+                    url: '../login/login',
+                  })
                 } else {
                     wx.hideLoading()
                     wx.showModal({
@@ -117,22 +129,6 @@ Page({
     */
     onShow() {
 
-    },
-    /*
-    *跳转到bind页面
-    **/
-    toBindBaby(){
-      wx.navigateTo({
-        url: '../bindBaby/bindBaby',
-      })
-    },
-    /*
-    *跳转到绑定宠物页面
-    **/
-    toBindPet() {
-      wx.navigateTo({
-        url: '../bindPet/bindPet',
-      })
     },
     /**
      * 生命周期函数--监听页面隐藏
