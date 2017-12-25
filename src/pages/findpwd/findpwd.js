@@ -120,6 +120,7 @@ Page({
       } else {
         this.setData({
           taged: false,
+          countDown: "60s",
           codeText: "重新获取"
         })
         clearInterval(countDown)

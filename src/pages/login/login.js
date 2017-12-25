@@ -66,6 +66,23 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /**
+    * 关闭弹出框
+    */
+  hide: function () {
+    setTimeout(() => {
+      this.setData({
+        showToast: false
+      })
+    }, 1500)
+  },
+  showCustomToast(msg) {
+    this.setData({
+      toastText: msg,
+      showToast: true
+    });
+    this.hide();
+  },  
   getAccount(e) {
     if (e.detail.value.trim() !== "") {
       this.setData({
@@ -104,15 +121,16 @@ Page({
     }
   },
   login() {
-    if (!disabled){
+    if (!this.data.disabled){
       if (!(/^1[34578]\d{9}$/.test(this.data.account))) {
-        wx.showToast({
-          title: '手机号码有误',
-        })
+        this.showCustomToast("手机号码有误");
         return;
+      }else{
+        console.log("准备验证");
+        wx.navigateBack({
+
+        });
       }
-    }else{
-      console.log("准备验证")
     }
   },
   toRegister(){

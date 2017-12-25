@@ -8,6 +8,17 @@ page{
 }
 .page textarea{
   width: 100%;
+  position: relative;
+}
+.count{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 24rpx;
+  color: #999;
+}
+.full{
+  color: #F8494C;
 }
 .confirm{
   height: 40px;
@@ -15,5 +26,5 @@ page{
   text-align: center;
   margin-top: 20px;
   line-height: 40px;
-  color: #f00;
+  color: #F8494C;
 }

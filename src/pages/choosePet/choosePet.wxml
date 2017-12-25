@@ -1,3 +1,4 @@
+<import src="/common/customModal.wxml"/>
 <view>
     <view class="page">
         <view class='babys' wx:for="{{babys}}" wx:for-index="ide" wx:for-item="itemName" bindtap='showTooltip'>
@@ -18,4 +19,5 @@
         </view>
         <view class='addContent' bindtap='toAddPet'> <text>+</text> 添加宝贝 </view>
     </view>
+    <template is="customModal" data="{{showModal:showModal,modalText:modalText}}"/>
 </view>

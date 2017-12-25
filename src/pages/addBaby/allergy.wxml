@@ -1,2 +1,2 @@
 <import src="/common/firstAid.wxml"/>
-<template is="firstAid" data="{{placeholder:'如：轻微花粉过敏',value:allergyText}}"/>
+<template is="firstAid" data="{{placeholder:'如：轻微花粉过敏',value:allergyText,num:num}}"/>

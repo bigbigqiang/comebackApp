@@ -273,9 +273,59 @@ button[type="warn"] {
   width: 100%;
 }
 .addContent text{
-  font-size: 54rpx;
+  font-size: 50rpx;
   display: inline-block;
 }
 .text-right{
   text-align: right;
+}
+.custom-modal{
+  z-index: 5000;
+  width: 70%;
+  height: 160px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 6px;
+}
+.custom-modal image{
+  width: 110px;
+  height: 80px;
+  display: block;
+  margin: -40px auto 0;
+}
+.modal-msg{
+  text-align: center;
+  color: #354448;
+  font-size: 26rpx;
+  height: 80px;
+  line-height: 80px;
+}
+.buttons{
+  height: 40px;
+}
+.btn-content{
+  width: 50%;
+  height: 40px;
+  float: left;
+}
+.btn-content view{
+  width: 100px;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+.btn-content view.cancel{
+  background-color: #ddd;
+}
+.btn-content view.confirm{
+  background-color: #F8494C;
 }

@@ -11,8 +11,8 @@
       <view class='icon'>
         <image src='/image/testCode.png'></image>
       </view>
-      <input type='text' placeholder='请输入验证码' bindinput='testCodeChange'/>
-      <view class='visible'>
+      <input class='Vcode' type='text' placeholder='请输入验证码' bindinput='testCodeChange'/>
+      <view class='get-code'>
         <text wx:if="{{!taged}}" class='code-text' bindtap='testCode'>{{codeText}}</text>
         <text wx:if="{{taged}}" class='count-down'>{{countDown}}</text>
       </view>

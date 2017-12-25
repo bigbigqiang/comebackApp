@@ -1,7 +1,9 @@
 <template name="firstAid">
   <view>
     <view class="page">
-        <textarea placeholder="{{placeholder}}" maxlength='200' value='{{value}}' bindinput='getMessage'></textarea>
+        <textarea placeholder="{{placeholder}}" maxlength='200' value='{{value}}' bindinput='getMessage'>
+        <text class='count {{num==200?"full":""}}'>({{num}}/200)</text>
+        </textarea>
     </view>
     <view class='confirm' bindtap='confirm'>确定</view>
   </view>

@@ -27,7 +27,10 @@ Page({
       // { "name": "东东", "phone": "13255556666" }, 
       // { "name": "关关", "phone": "13255557777" }
     ],
-    condition: false
+    condition: false,
+    showModal: false,
+    modalText: "",
+    modalId: 0
   },
 
   /**
@@ -111,6 +114,34 @@ Page({
   
   },
   /**
+    * 隐藏modal
+    */
+  hideModal() {
+    this.setData({
+      showModal: false,
+      modalText: ""
+    })
+  },
+  /**
+  * 显示modal
+  */
+  showModal(msg) {
+    this.setData({
+      showModal: true,
+      modalText: msg
+    })
+  },
+  /**
+  * modal确认按钮
+  */
+  confirmModal() {
+    this.hideModal();
+    this.data.contacts.splice(this.data.modalId, 1);
+    this.setData({
+      contacts: this.data.contacts
+    })
+  },
+  /**
     * 关闭弹出框
     */
   hide: function () {
@@ -161,21 +192,10 @@ Page({
    * 删除紧急联系人
   */
   deleteContact(e) {
-    let _this = this;
-    wx.showModal({
-      content: '确定删除紧急联系人?',
-      success(res) {
-        if (res.confirm) {
-          _this.data.contacts.splice(e.target.id, 1);
-          _this.setData({
-            contacts: _this.data.contacts
-          })
-        } else {
-          return;
-        }
-      }
-
+    this.setData({
+      modalId: e.target.id
     })
+    this.showModal('确定删除紧急联系人?')
   },
   /** 
    * 选择绝育状态
@@ -270,8 +290,15 @@ Page({
     })
   },
   toPetSuccess(){
-    wx.navigateTo({
-      url: '../petSuccess/petSuccess'
+    wx.showToast({
+      title: '绑定成功！',
+      complete: function () {
+        setTimeout(function () {
+          wx.navigateBack({
+            delta: 3
+          })
+        }, 1500)
+      }
     })
   }
 })

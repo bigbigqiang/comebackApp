@@ -16,7 +16,7 @@
         联系人
       </view>
       <view class='right-info'>
-        <input type='text' placeholder='请输入不超过5位的联系人名称' value='{{newName}}' bindinput='verifyName' />
+        <input type='text' maxlength='5' placeholder='请输入不超过5位的联系人名称' value='{{newName}}' bindinput='verifyName' />
       </view>
     </view>
     <view class='list'>
@@ -24,7 +24,7 @@
         手机号
       </view>
       <view class='right-info'>
-        <input type='text' placeholder='请输入11位手机号码' value='{{newPhone}}' bindinput='verifyPhone'/>
+        <input type='number' maxlength='11' placeholder='请输入11位手机号码' value='{{newPhone}}' bindinput='verifyPhone'/>
       </view>
     </view>
     <view class='box-foot'>

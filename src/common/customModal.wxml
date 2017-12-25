@@ -1,0 +1,17 @@
+<template name="customModal">
+  <view wx:if="{{showModal}}">
+    <view class='mask'></view>
+    <view class='custom-modal'>
+      <image src='/image/modal.png'></image>
+      <view class='modal-msg'>{{modalText}}</view>
+      <view class='buttons'>
+        <view class='btn-content'>
+          <view class='cancel' bindtap='hideModal'>取消</view>
+        </view>
+        <view class='btn-content'>
+          <view class='confirm' bindtap='confirmModal'>确定</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,2 +1,2 @@
 <import src="/common/firstAid.wxml"/>
-<template is="firstAid" data="{{placeholder:'如：接触性过敏性皮炎',value:medicalText}}"/>
+<template is="firstAid" data="{{placeholder:'如：接触性过敏性皮炎',value:medicalText,num:num}}"/>

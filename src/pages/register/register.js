@@ -109,7 +109,7 @@ Page({
     wx.showToast({
       title: '注册成功',
       duration:2000,
-      success:function(){
+      complete:function(){
         wx.navigateBack();
       }
     })
@@ -142,6 +142,7 @@ Page({
       }else{
         this.setData({
           taged:false,
+          countDown: "60s",
           codeText:"重新获取"
         })
         clearInterval(countDown)

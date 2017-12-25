@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    allergyText:""
+    allergyText:"",
+    num:0
   },
 
   /**
@@ -72,7 +73,8 @@ Page({
    */
   getMessage(e){
     this.setData({
-      allergyText:e.detail.value
+      allergyText:e.detail.value,
+      num: e.detail.value.length
     })
   },
   /**

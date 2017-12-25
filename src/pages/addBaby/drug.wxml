@@ -1,2 +1,2 @@
 <import src="/common/firstAid.wxml"/>
-<template is="firstAid" data="{{placeholder:'如：999感冒灵颗粒',value:drugText}}"/>
+<template is="firstAid" data="{{placeholder:'如：999感冒灵颗粒',value:drugText,num:num}}"/>

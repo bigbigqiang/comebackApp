@@ -1,3 +1,4 @@
+<import src="/common/customModal.wxml"/>
 <view>
     <view class="page">
         <view class='avatar' bindtap='actionSheetTap'>
@@ -79,6 +80,7 @@
           <image class='arrow' src='/image/arrowright.png'></image> 
         </view>
     </view>
-    <view class='nextStep' bindtap='toSuccess' >下一步</view>
+    <view class='nextStep' bindtap='toSuccess' >完成</view>
     <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+    <template is="customModal" data="{{showModal:showModal,modalText:modalText}}"/>
 </view>

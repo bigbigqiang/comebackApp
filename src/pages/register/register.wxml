@@ -6,14 +6,14 @@
       <view class='icon'>
         <image src='/image/account.png'></image>
       </view>
-      <input type='text' placeholder='请输入您的手机号' bindinput='getAccount' />
+      <input type='number' placeholder='请输入您的手机号' bindinput='getAccount' />
     </view>
     <view class='form-list'>
       <view class='icon'>
         <image src='/image/testCode.png'></image>
       </view>
-      <input type='text' placeholder='请输入验证密' bindblur='testCodeChange' />
-      <view class='visible'>
+      <input type='text' class='Vcode' placeholder='请输入验证码' bindblur='testCodeChange' />
+      <view class='get-code'>
         <text wx:if="{{!taged}}" class='code-text' bindtap='testCode'>{{codeText}}</text>
         <text wx:if="{{taged}}" class='count-down'>{{countDown}}</text>
       </view>

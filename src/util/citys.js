@@ -88,14 +88,4 @@ var petData = [
     ]
   }
 ];
-
-// function init(that){
-//   that.setData( { 
-//         'cityData': cityData
-//     });
-// }
-
-// module.exports={
-//     init:init
-// }
 module.exports = petData;

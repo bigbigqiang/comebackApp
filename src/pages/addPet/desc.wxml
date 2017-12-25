@@ -1,2 +1,2 @@
 <import src="/common/firstAid.wxml"/>
-<template is="firstAid" data="{{placeholder:'请输入需要备注的其他信息',value:descText}}"/>
+<template is="firstAid" data="{{placeholder:'请输入需要备注的其他信息',value:descText,num:num}}"/>

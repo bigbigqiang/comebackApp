@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    foodText: ""
+    foodText: "",
+    num:0
   },
 
   /**
@@ -67,7 +68,8 @@ Page({
   },
   getMessage(e) {
     this.setData({
-      foodText: e.detail.value
+      foodText: e.detail.value,
+      num: e.detail.value.length
     })
   },
   confirm() {

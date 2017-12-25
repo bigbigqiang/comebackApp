@@ -1,91 +1,118 @@
-page{
+page {
   background-color: #fff;
   border-top: 1px solid #ddd;
 }
-.logo{
+
+.logo {
   height: 100px;
   width: 100px;
   display: block;
   margin: 50px auto;
 }
-.form{
+
+.form {
   height: 120px;
   width: 100%;
   position: relative;
 }
-.form image{
+
+.form image {
   display: block;
   height: 20px;
   width: 20px;
   margin: 15px auto;
 }
-.form-list{
+
+.form-list {
   border-bottom: 1px solid #ddd;
   height: 50px;
   width: 100%;
   position: relative;
 }
-.icon{
+
+.icon {
   width: 20%;
   height: 50px;
   float: left;
 }
 
-.form-list input{
+.form-list input {
   width: 70%;
   height: 50px;
   line-height: 50px;
   float: left;
 }
-.visible{
+
+.visible {
   width: 10%;
   height: 50px;
   float: left;
 }
-.regist{
+
+.regist {
   color: #fb6c6e;
   position: absolute;
   left: 20px;
   bottom: -20px;
 }
-.forget{
+
+.forget {
   color: #fb6c6e;
   position: absolute;
   right: 20px;
   bottom: -20px;
 }
-.confirm{
+
+.confirm {
   background-color: #f9494c;
   margin: 60px auto 10px;
   width: 85%;
   border-radius: 30px;
   height: 50px;
   text-align: center;
-  color:#fff;
+  color: #fff;
   border: none;
   line-height: 50px;
 }
-.button-disable{
+
+.button-disable {
   background-color: #ddd;
-  color:#aaa;
+  color: #aaa;
 }
-.visible text{
+
+.Vcode {
+  width: 55% !important;
+}
+
+.get-code {
+  width: 25%;
+  height: 50px;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* .visible text{
   position: absolute;
   right: 10px;
   top:12px;
-}
-.code-text{
+} */
+
+.code-text {
   color: #ff3147;
 }
-.count-down{
+
+.count-down {
   color: #888;
   border: 1px solid #888;
   padding: 0 15px;
   border-radius: 20px;
 }
-.terms{
+
+.terms {
   padding-left: 10%;
 }
-.terms text{
+
+.terms text {
   font-size: 26rpx;
 }

@@ -17,4 +17,5 @@
         </view>
     </view>
     <view wx:if="{{showToast}}" class='custom-toast'>{{toastText}}</view>
+    
 </view>

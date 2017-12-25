@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    descText: ""
+    descText: "",
+    num: 0
   },
 
   /**
@@ -67,7 +68,8 @@ Page({
   },
   getMessage(e) {
     this.setData({
-      descText: e.detail.value
+      descText: e.detail.value,
+      num: e.detail.value.length
     })
   },
   confirm() {

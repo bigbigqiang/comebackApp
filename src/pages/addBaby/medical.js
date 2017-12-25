@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    medicalText:""
+    medicalText:"",
+    num:0
   },
 
   /**
@@ -67,7 +68,8 @@ Page({
   },
   getMessage(e) {
     this.setData({
-      medicalText: e.detail.value
+      medicalText: e.detail.value,
+      num: e.detail.value.length
     })
   },
   confirm() {

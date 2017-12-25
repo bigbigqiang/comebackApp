@@ -20,7 +20,10 @@ Page({
           photo: "/image/default-photo.png",
           age:5,
           sex:0
-        }]
+        }],
+        showModal:false,
+        modalText:"",
+        modalId:0
     },
 
     /**
@@ -53,16 +56,44 @@ Page({
       })
     },
     /**
+    * 隐藏modal
+    */
+    hideModal(){
+      this.setData({
+        showModal: false,
+        modalText: ""
+      })
+    },
+    /**
+    * 显示modal
+    */
+    showModal(msg) {
+      this.setData({
+        showModal: true,
+        modalText: msg
+      })
+    },
+    /**
+    * modal确认按钮
+    */
+    confirmModal(){
+      this.hideModal();
+      wx.showToast({
+        title: '绑定成功！',
+        complete: function () {
+          setTimeout(function () {
+            wx.navigateBack({
+              delta: 2
+            })
+          }, 1500)
+        }
+      })
+    },
+    /**
     * 确认绑定弹出框
     */
     showTooltip() {
-      wx.showModal({
-        title: '',
-        content: '确定绑定魏莉小宝？绑定后不可更改',
-        success(res){
-          console.log(res);
-        }
-      })
+      this.showModal('确定绑定魏莉小宝？绑定后不可更改')
     },     
     /**
     * 生命周期函数--监听页面显示

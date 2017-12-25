@@ -17,7 +17,10 @@ Page({
       age: 3,
       petType:"约克夏梗",
       sex: 0
-    }]
+    }],
+    showModal: false,
+    modalText: "",
+    modalId: 0
   },
 
   /**
@@ -25,6 +28,40 @@ Page({
    */
   onLoad(options) {
 
+  },
+  /**
+   * 隐藏modal
+   */
+  hideModal() {
+    this.setData({
+      showModal: false,
+      modalText: ""
+    })
+  },
+  /**
+  * 显示modal
+  */
+  showModal(msg) {
+    this.setData({
+      showModal: true,
+      modalText: msg
+    })
+  },
+  /**
+  * modal确认按钮
+  */
+  confirmModal() {
+    this.hideModal();
+    wx.showToast({
+      title: '绑定成功！',
+      complete:function(){
+        setTimeout(function(){
+          wx.navigateBack({
+            delta: 2
+          })
+        },1500)
+      }
+    })
   },
   /** 
    * 监听底部选项
@@ -52,14 +89,11 @@ Page({
   /**
   * 确认绑定弹出框
   */
-  showTooltip() {
-    wx.showModal({
-      title: '',
-      content: '确定绑定球球？绑定后不可更改',
-      success(res) {
-        console.log(res);
-      }
+  showTooltip(e) {
+    this.setData({
+      modalId: e.target.id
     })
+    this.showModal('确定绑定球球？绑定后不可更改')
   },
   /**
   * 生命周期函数--监听页面显示

@@ -1,3 +1,4 @@
+<import src="/common/customModal.wxml"/>
 <view>
     <view class="page">
         <view class='noBaby' wx:if="{{!babys.length}}">
@@ -22,4 +23,5 @@
         </view>
         <view class='addContent' bindtap='toAddBaby'> <text>+</text> 添加宝贝 </view>
     </view>
+    <template is="customModal" data="{{showModal:showModal,modalText:modalText}}"/>
 </view>
